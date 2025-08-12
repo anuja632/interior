@@ -1,0 +1,405 @@
+    /* Navbar */
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding: 0 12px;
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #ffcc66;
+    }
+    .navbar-brand img {
+      height: 50px;
+    }
+
+    /* Hero Section */
+    .hero-slider {
+      position: relative;
+      margin-top: 70px; /* keeps it below the fixed navbar */
+    }
+    .hero-slider .item {
+      height: 90vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    /* Overlay effect - Darker for better text contrast */
+    .hero-slider .item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65); /* Darker overlay with 65% opacity */
+      z-index: 1;
+    }
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  transform: translateY(-50%);
+  /* background: rgba(0, 0, 0, 0.4); */
+  padding: 15px 25px;
+  border-radius: 6px;
+  max-width: 900px;
+  color: white;
+  z-index: 2;
+}
+
+    /* Text styles with shadow */
+    .hero-overlay h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+      margin-bottom: 0.5rem;
+    }
+    .hero-overlay p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Vertical Enquire Now Button */
+    .enquire-btn {
+      position: fixed;
+      top: 30%;
+      left: 0;
+      background: #e2922b;
+      color: #fff;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      padding: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* Floating Social Icons */
+    .social-icons {
+      position: fixed;
+      right: 10px;
+      top: 70%;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      font-size: 18px;
+      color: #333;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .social-icons a.whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+
+    /* Owl Carousel navigation arrows */
+    .hero-slider .owl-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+    .hero-slider .owl-nav button {
+      background: rgba(0, 0, 0, 0.5) !important;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white !important;
+      font-size: 20px !important;
+      transition: background 0.3s ease;
+    }
+    .hero-slider .owl-nav button:hover {
+      background: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    /* Owl Carousel dots at bottom center */
+    .hero-slider .owl-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .hero-slider .owl-dots .owl-dot span {
+      background: white !important;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    .hero-slider .owl-dots .owl-dot.active span {
+      background: #e2922b !important;
+    }
+    .about-section {
+  background-color: #fff;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.about-section .highlight {
+  color: #c94b69;
+  font-weight: bold;
+}
+
+.about-section img {
+  object-fit: cover;
+}
+/* .services-section {
+  background-color: #111; 
+  color: white;
+} */
+
+.services-section h2 {
+  font-size: 2rem;
+}
+
+.service-card img {
+  transition: transform 0.3s ease-in-out;
+  height:300px;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.slide-item {
+  position: relative;
+}
+
+.slide-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.slide-number {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Owl Carousel Navigation Arrows */
+#numberCarousel .owl-nav button {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 25px !important; /* Balanced size for icons */
+  line-height: 1;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+  z-index: 10; /* Make sure it's above slides */
+}
+
+#numberCarousel .owl-nav button.owl-prev {
+  left: -60px; /* Position outside slider */
+}
+
+#numberCarousel .owl-nav button.owl-next {
+  right: -60px; /* Position outside slider */
+}
+
+#numberCarousel .owl-nav button:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+  transform: translateY(-50%) scale(1.1); /* Subtle zoom on hover */
+}
+    .design-section {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      /* background-color: #111; */
+      /* color: #fff; */
+    }
+    .design-image img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+    .design-content {
+      /* background-color: #1d1d1d; */
+      padding: 40px;
+      max-width: 600px;
+    }
+    .design-content h6 {
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #c0a062;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .design-content h2 {
+      font-weight: bold;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .design-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .design-content .btn-outline-light {
+      border-width: 2px;
+      padding: 8px 20px;
+    }
+
+     /* #numberCarousel.owl-nav .owl-prev {
+      left: 10px;
+    }
+     #numberCarousel.owl-nav .owl-next {
+      right: 10px;
+    } */
+
+
+
+
+
+    .contact-banners {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1505691723518-36a1b1d63c55') center/cover no-repeat;
+}
+.contact-banners .btn {
+  padding: 10px 25px;
+  font-size: 1.1rem;
+}
+
+
+.contact-top-banner {
+  height: 60vh;
+  object-fit: cover;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://eleganteinterior.com/wp-content/uploads/2024/10/3d-room-interior-with-classic-design-furniture-1-scaled.jpg') 
+              center/cover no-repeat;
+}
+.contact-top-banner h1 {
+  font-size: 3rem;
+}
+.contact-top-banner p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.contact-info-card {
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+.contact-info-card:hover {
+  transform: translateY(-5px);
+}
+.contact-info-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+.contact-info-card * {
+  position: relative;
+  z-index: 2;
+}
+.contact-info-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Background images */
+.bg-address {
+  background: url('https://blogs.airbrickinfra.com/wp-content/uploads/2023/06/26fd42150022979.62f25635880ef-1024x576.jpg') center/cover no-repeat;
+}
+.bg-phone {
+  background: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/4c466f151115043.6306324acce1d.jpg') center/cover no-repeat;
+}
+.bg-email {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStSB5N_uqCqYqASd5zGqQdfx3-1PhFh_LBSPpx63kLfd9TkWIrIRBMHU74UqI-Nq3rgsY&usqp=CAU') center/cover no-repeat;
+}
+
+/* Contact Form with Image */
+.contact-image {
+  background-size: cover;
+  background-position: center;
+  min-height: 100%;
+}
+@media (max-width: 991px) {
+  .contact-image {
+    height: 300px;
+  }
+}
+
+.footer {
+    font-size: 19px;
+  min-height:500px; /* Banner-like height */
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('https://tdsmartinterior.com/assets/frontend/images/background/page-title-bg.webp') center/cover no-repeat;
+  display: flex;
+  align-items: center; /* Vertically center content */
+   padding-top: 60px;  /* Top space */
+  padding-bottom: 40px; /* Bottom space */
+}
+
+.footer .row {
+  row-gap: 30px !important; /* Space between rows */
+}
+
+.footer img {
+  max-width: 180px;
+  margin-bottom: 15px;
+}
+.footer ul li {
+  margin-bottom: 10px; /* Adjust gap between items */
+}
+
+.footer ul li:last-child {
+  margin-bottom: 0; /* Remove extra space after last item */
+}
+
+
+.footer a:hover {
+  color: #FEC902 !important;
+}
+
+.footer .border-top {
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
