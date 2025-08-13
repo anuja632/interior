@@ -4,6 +4,7 @@
       font-weight: 500;
       text-transform: uppercase;
       padding: 0 12px;
+      /* background-color: #333; */
     }
     .navbar-dark .navbar-nav .nav-link:hover {
       color: #ffcc66;
@@ -192,8 +193,46 @@
   height: 500px;
   object-fit: cover;
 }
+.slide-item {
+  position: relative;
+  overflow: hidden;
+}
 
-.slide-number {
+.slide-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Zoom image on hover */
+.slide-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Hover text overlay */
+.hover-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+/* Show on hover */
+.slide-item:hover .hover-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide number style */
+/* .slide-number {
   position: absolute;
   top: 10px;
   left: 15px;
@@ -202,12 +241,12 @@
   font-size: 20px;
   padding: 5px 10px;
   border-radius: 5px;
-}
+} */
 
 /* Owl Carousel Navigation Arrows */
 #numberCarousel .owl-nav button {
   position: absolute;
-  top: 50%; /* Center vertically */
+  top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.5) !important;
   border-radius: 50%;
@@ -217,25 +256,26 @@
   align-items: center;
   justify-content: center;
   color: white !important;
-  font-size: 25px !important; /* Balanced size for icons */
+  font-size: 25px !important;
   line-height: 1;
   transition: background 0.3s ease, transform 0.2s ease;
   border: none;
-  z-index: 10; /* Make sure it's above slides */
+  z-index: 10;
 }
 
 #numberCarousel .owl-nav button.owl-prev {
-  left: -60px; /* Position outside slider */
+  left: -60px;
 }
 
 #numberCarousel .owl-nav button.owl-next {
-  right: -60px; /* Position outside slider */
+  right: -60px;
 }
 
 #numberCarousel .owl-nav button:hover {
   background: rgba(0, 0, 0, 0.8) !important;
-  transform: translateY(-50%) scale(1.1); /* Subtle zoom on hover */
+  transform: translateY(-50%) scale(1.1);
 }
+
     .design-section {
       display: flex;
       align-items: center;
@@ -287,9 +327,14 @@
 
 
     .contact-banners {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('https://images.unsplash.com/photo-1505691723518-36a1b1d63c55') center/cover no-repeat;
-}
+    position: relative;
+    width: 100%;
+    height: 300px; /* adjust height if needed */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('https://www.euphoriainteriors.com/wp-content/uploads/2024/10/Rental-Home-Design-UAE-.webp') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;}
 .contact-banners .btn {
   padding: 10px 25px;
   font-size: 1.1rem;
@@ -403,3 +448,730 @@
   border-color: rgba(255,255,255,0.2) !important;
 }
 
+
+    .choose-area {
+      background-color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .choose-shape {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      /* width: 150px; */
+      opacity: 1;
+      z-index: 0;
+    }
+
+    .section-header h4 {
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: #888;
+    }
+
+    .section-header h2 {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .section-header p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .choose-list img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .choose-image {
+      max-width: 450px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stroke-text h2 {
+      font-size: 4rem;
+      color: transparent;
+      -webkit-text-stroke: 2px #000;
+      text-stroke: 2px #000; /* Fallback for browsers supporting text-stroke */
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    @media (max-width: 767px) {
+      .stroke-text h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+
+
+.marquee-area {
+    position: relative;
+    width: 100%;
+    height: 300px; /* adjust height if needed */
+    background: url('https://tdsmartinterior.com/assets/frontend/images/bg/marquee-bg.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.marquee-area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* black overlay with 40% opacity */
+    z-index: 1; /* sit above background but below text */
+}
+
+.marquee__wrp {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    position: relative;
+    z-index: 2; /* make sure text is above overlay */
+}
+
+    .marquee__item {
+        display: inline-block;
+        padding: 0 50px;
+    }
+
+    .marquee__item h2 {
+        font-size: 80px;
+        color: transparent;
+        -webkit-text-stroke: 1px white;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    @keyframes marquee {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+.contact-area {
+    position: relative;
+    width: 100%;
+    padding: 60px 0;
+    color: #000;
+    overflow: hidden;
+}
+
+.contact-area .contact__shape img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.contact-area .contact__image {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-area .contact__wrp {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-area input,
+.contact-area textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    outline: none;
+    border-radius: 5px;
+    color: #000;
+}
+
+.contact-area input:focus,
+.contact-area textarea:focus {
+    border-color: #c59a5d;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(197, 154, 93, 0.5);
+}
+
+.contact-area textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+.contact-area .submit {
+    background: #c59a5d;
+    border: none;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-area .submit:hover {
+    background: #a67f4a;
+}
+
+.contact-area .contact__item {
+    text-align: center;
+}
+
+.contact-area .contact__item .icon img,
+.contact-area .contact__item .icon-two img {
+    max-width: 50px;
+}
+
+.contact-area .contact__item h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Floating Contact Box */
+.floating-box {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #111;
+    color: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.2);
+    max-width: 300px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+/* Design Process */
+.process-step {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.process-step:hover {
+    transform: translateY(-5px);
+}
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #c59a5d;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+    /* Section styling */
+    .how-we-work {
+      background-color: #fff;
+      padding: 80px 0;
+      color: #000;
+    }
+
+    .how-we-work h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    .how-we-work h2 span {
+      color: #b88d5c; /* Gold accent */
+    }
+    .process-step {
+      position: relative;
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 12px;
+      color: #fff;
+      overflow: hidden;
+    }
+.process-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.process-step::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* Black overlay, 50% opacity */
+  z-index: 1;
+}.process-step img {
+  filter: brightness(0) invert(1); /* Turns any color to white */
+}
+
+.process-step-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+    /* Example background images for each step */
+    .step1::before { background-image: url('https://dam.lcieducation.com/LCI-Education/Programs_Learning-Experiences/Art_Design-and-Communication/GettyImages-1372401378.jpg?vh=ff2ae0&w=1400&q=80'); }
+    .step2::before { background-image: url('https://i.pinimg.com/736x/3a/14/f5/3a14f50609fa4ebd7607fc28e4308fad.jpg'); }
+    .step3::before { background-image: url('https://cdn.prod.website-files.com/63c93a6f06452b0cb9457eb5/65681fcd86634b2777d7a119_64efef4f0cd076eeeb142e5b_harty-whole-home-remodel-living.jpg'); }
+    .step4::before { background-image: url('https://media.designcafe.com/wp-content/uploads/2020/03/21012601/chandelier-luxury-modern-living-room-design.jpg');}
+
+    
+    .process-step img {
+      height: 50px;
+      margin-bottom: 15px;
+    }
+
+    .process-step h5 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color:White;
+    }
+
+    .process-step p {
+      color: white;
+      font-size: 0.95rem;
+    }
+/* Testimonials */
+#testimonials img {
+    border: 3px solid #c59a5d;
+}
+#testimonials h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Stats */
+#stats .counter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c59a5d;
+}
+
+.bg-purple {
+    background-color: #6f42c1 !important;
+}
+
+/* Review Card Styling */
+.review-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Avatar Styling */
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Google Icon */
+.google-icon {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+/* Star Rating */
+.text-warning {
+    font-size: 1.1rem;
+}
+
+/* Owl Carousel Nav Buttons */
+.reviews-carousel .owl-nav button {
+    background: #fff !important;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.reviews-carousel .owl-nav button.owl-prev {
+    left: -45px;
+}
+
+.reviews-carousel .owl-nav button.owl-next {
+    right: -45px;
+}
+
+.reviews-carousel .owl-nav button span {
+    font-size: 1.5rem;
+    color: #555;
+    line-height: 0;
+}
+
+/* Hide dots if not used */
+.reviews-carousel .owl-dots {
+    display: none;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .reviews-carousel .owl-nav button.owl-prev {
+        left: -25px;
+    }
+    .reviews-carousel .owl-nav button.owl-next {
+        right: -25px;
+    }
+}
+
+.about-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-banner-overlay {
+  background: rgba(0, 0, 0, 0.5); /* dark transparent overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-banner h1 {
+  font-size: 48px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-banner .breadcrumb {
+  color: #f8f9fa;
+  font-size: 18px;
+  text-align: center;
+  justify-content: center;
+}
+
+.about-banner .breadcrumb a {
+  color: #ffc107; /* gold link color */
+  text-decoration: none;
+}
+
+.about-banner .breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-banner {
+    height: 250px;
+  }
+  .about-banner h1 {
+    font-size: 32px;
+  }
+  .about-banner .breadcrumb {
+    font-size: 16px;
+  }
+}
+
+    .about-section {
+      position: relative;
+      padding: 80px 0;
+      background: #fff;
+    }
+    .about-section .image-wrapper {
+      position: relative;
+    }
+    .about-section .image-wrapper .main-img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+    /* Shape over the image (upper-left) */
+    .shape-image {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      width: 100px;
+      z-index: 1;
+    }
+    /* Text side container positioning */
+    .text-area {
+      position: relative;
+    }
+    /* Shape over the text (upper-right) */
+    .shape-text {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 120px;
+      z-index: 1;
+    }
+    .about-section h6 {
+      color: #c59d5f;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+    .about-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .btn-custom {
+      background: #d4a13b;
+      color: white;
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: 4px;
+      border: none;
+      transition: 0.3s;
+    }
+    .btn-custom:hover {
+      background: #b8872e;
+    }
+    @media (max-width: 768px) {
+      .shape-image { top: -10px; left: -10px; width: 80px; }
+      .shape-text  { top: -10px; right: -10px; width: 90px; }
+      .about-section h2 { font-size: 28px; }
+    }
+
+        .vision-mission-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+
+    /* Common card styles */
+    .vm-card {
+      border-radius: 15px;
+      overflow: hidden;
+      color: white;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .vm-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Background images */
+    .vision-card {
+      background: url('https://cdn-ildeijl.nitrocdn.com/WWZZHBIAduQtKZDoYNvoIrbnMovSSWDN/assets/images/optimized/rev-4e1d24b/eleganteinterior.com/wp-content/uploads/2024/10/balcony-scaled.webp') no-repeat center center/cover;
+    }
+
+    .mission-card {
+      background: url('https://cdn-ildeijl.nitrocdn.com/WWZZHBIAduQtKZDoYNvoIrbnMovSSWDN/assets/images/optimized/rev-4e1d24b/eleganteinterior.com/wp-content/uploads/2024/10/pexels-pixabay-276724.jpg') no-repeat center center/cover;
+    }
+
+    /* Dark overlay for readability */
+    .vm-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    /* Content inside the card */
+    .vm-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .vm-content h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .vm-content p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .vm-icon {
+      font-size: 40px;
+      color: #ffd24c;
+      margin-bottom: 10px;
+    }
+
+    .faq-section {
+      padding: 60px 0;
+    }
+    .faq-title {
+      font-weight: 700;
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .faq-subtitle {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .faq-card {
+      background: #fff;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+      margin-bottom: 15px;
+    }
+    .faq-question {
+      cursor: pointer;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+    }
+    .faq-question::after {
+      content: '\002B';
+      position: absolute;
+      right: 20px;
+      font-size: 22px;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active::after {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 18px;
+      font-size: 15px;
+      color: #555;
+    }
+    .faq-answer.open {
+      padding: 0 18px 15px 18px;
+    }
+    .faq-image {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-image img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      display: block;
+    }
+    .stats-section {
+    background: #fff;
+    padding: 60px 0;
+    text-align: center;
+  }
+  .stats-section h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #d4a017; /* gold */
+  }
+  .stats-section p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+  }
+  .stat-middle h2 {
+    font-size: 140px;
+    font-weight: 900;
+    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .divider {
+    border-left: 1px solid #ddd;
+    height: 100%;
+  }
+      .highlight-yellow {
+      color: #cfa65e; /* Golden tone for "Purpose" */
+    }
+    .rounded-img {
+      border-radius: 15px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .content-section {
+      padding: 60px 0;
+    }
+    .content-text h1 {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+    .content-text p {
+      font-size: 1.1rem;
+      color: #333;
+      max-width: 650px;
+    }
+
+    .logo-carousel .item img {
+height: 250px;
+object-fit: cover;
+  margin: auto;
+  /* filter: grayscale(100%); */
+  transition: 0.3s ease;
+}
+.logo-carousel .item img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+    .service-card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #fff;
+      height: 100%;
+    }
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+    .service-card .card-body {
+      text-align: center;
+      padding: 15px;
+    }
+    .service-card h5 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0;
+    }
