@@ -1,8 +1,141 @@
-    /* Navbar */
+ /* ===== FONT IMPORT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Adamina&family=Lobster&family=Cabin&family=Raleway:wght@400;700&family=Goudy+Bookletter+1911&family=Allerta&family=Crimson+Text:wght@400;700&family=Arvo:wght@400;700&family=PT+Sans:wght@400;700&family=Dancing+Script&family=Josefin+Sans:wght@400;700&family=Allan&family=Cardo&family=Molengo&family=Lekton&family=Corben&family=Nobile&family=Ubuntu:wght@400;700&family=Vollkorn:wght@400;700&display=swap');
+
+
+ 
+ body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: 	#fdfcf9;
+ color:	#2e2e2e;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif; /* Clean body font */
+  line-height: 1.6;
+
+
+}
+
+h1, h2, h3,h4,h5,h6 {
+
+     font-family: "Lobster Two", cursive;
+  /* color: #2C2C2C; */
+}
+.btn-custom.luxe-hover {
+  background-color: #a8874a; /* Luxury Gold */
+  color: #ffffff;
+  border: 2px solid #a8874a;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden; /* Keeps effect inside button */
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  width:200px;
+}
+
+.btn-custom.luxe-hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn-custom.luxe-hover:hover::before {
+  left: 125%; /* Move across inside only */
+}
+
+.btn-custom.luxe-hover:hover {
+  color: white;
+}
+
+
+
+.about-images {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-img {
+    max-width: 250px !important;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.about-img-tall {
+    height: 400px;
+}
+
+.about-img-offset {
+    margin-top: 90px !important;
+}
+.about-subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #c0a062;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+
+@media (max-width: 1080px){
+    .about-img {
+    max-width: 200px !important;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+.shape-text {
+    position: absolute;
+    top: -125px;
+    right: -28px;
+    width: 120px;
+    z-index: 1;
+}
+}
+/* Responsive Media Queries */
+@media (max-width: 991px) {
+    .about-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-img,
+    .about-img-tall,
+    .about-img-offset {
+        max-width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-title {
+        font-size: 1.5rem;
+    }
+    
+    .about-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+  /* Navbar */
     .navbar-dark .navbar-nav .nav-link {
       color: #fff;
       font-weight: 500;
       text-transform: uppercase;
+           font-family: "Lobster Two", cursive;
+
       padding: 0 12px;
       /* background-color: #333; */
     }
@@ -13,6 +146,40 @@
       height: 50px;
     }
 
+    /* Media Queries for smaller screens */
+@media (max-width: 991px) {
+  .navbar-nav {
+    gap: 1rem; /* reduce gap on tablets and smaller */
+    text-align: center;
+  }
+  
+  .nav-link {
+    font-size: 0.95rem; /* slightly smaller text */
+    padding: 0.5rem 0; 
+  }
+
+  .text-end {
+    text-align: center !important; /* center button on small screens */
+    margin-top: 1rem;
+  }
+
+  .btn-custom {
+    width: 100%; /* full-width button */
+    padding: 0.5rem 0;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
     /* Hero Section */
     .hero-slider {
       position: relative;
@@ -32,11 +199,17 @@
       background: rgba(0, 0, 0, 0.65); /* Darker overlay with 65% opacity */
       z-index: 1;
     }
+.hero-slider .owl-stage-outer {
+    overflow-x: hidden !important;
+    background: #000; /* optional: prevents any faint white peeking */
+}
+
 
 .hero-overlay {
   position: absolute;
   top: 50%;
   left: 60px;
+
   transform: translateY(-50%);
   /* background: rgba(0, 0, 0, 0.4); */
   padding: 15px 25px;
@@ -63,8 +236,10 @@
     .enquire-btn {
       position: fixed;
       top: 30%;
+       
+
       left: 0;
-      background: #e2922b;
+      background: #c0a062;
       color: #fff;
       writing-mode: vertical-rl;
       text-orientation: mixed;
@@ -72,7 +247,39 @@
       font-weight: bold;
       cursor: pointer;
       z-index: 1000;
+        animation: bounce 2s infinite; /* or use pulse */
+
+      
     }
+    /* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 
     /* Floating Social Icons */
     .social-icons {
@@ -83,6 +290,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+        animation: pulse 2s infinite;
     }
     .social-icons a {
       display: flex;
@@ -101,6 +309,8 @@
       background: #25d366;
       color: #fff;
     }
+
+
 
     /* Owl Carousel navigation arrows */
     .hero-slider .owl-nav {
@@ -149,9 +359,7 @@
   background-color: #fff;
 }
 
-.about-section h2 {
-  font-size: 2rem;
-}
+
 
 .about-section p {
   font-size: 1rem;
@@ -166,10 +374,27 @@
 .about-section img {
   object-fit: cover;
 }
-/* .services-section {
-  background-color: #111; 
-  color: white;
-} */
+/* About Images Column */
+.about-images {
+    display: flex !important;
+    gap: 1rem;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+}
+
+.about-images img {
+    border-radius: 1rem;
+    max-width: 300px;
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+}
+
+/* Offset second image */
+.about-images img:nth-child(2) {
+    margin-top: 20px;
+}
+
 
 .services-section h2 {
   font-size: 2rem;
@@ -231,17 +456,7 @@
   transform: translateY(0);
 }
 
-/* Slide number style */
-/* .slide-number {
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  font-size: 20px;
-  padding: 5px 10px;
-  border-radius: 5px;
-} */
+
 
 /* Owl Carousel Navigation Arrows */
 #numberCarousel .owl-nav button {
@@ -274,6 +489,58 @@
 #numberCarousel .owl-nav button:hover {
   background: rgba(0, 0, 0, 0.8) !important;
   transform: translateY(-50%) scale(1.1);
+}
+@media (max-width:885px){
+    .shape-text {
+    position: absolute;
+    top: -82px;
+    right: -40px;
+    width: 120px;
+    z-index: 1;
+}
+}
+@media(max-width:500px){
+    .shape-text,.social-icons{
+        display: none;
+    }
+    #aq{margin-top: 10px;}
+}
+/* Below 500px → 1 card per row */
+@media (max-width: 499px) {
+  .col-custom {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* 500px to 767px → 2 cards per row */
+@media (min-width: 500px) and (max-width: 767px) {
+  .col-custom {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Media Query for screens under 1080px */
+@media (max-width: 1080px) {
+
+  #numberCarousel .owl-nav button {
+display: none;
+  }
+  .enquire-btn {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    background: #c0a062;
+    color: #fff;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    animation: bounce 2s infinite;
+}
 }
 
     .design-section {
@@ -309,18 +576,12 @@
       font-size: 16px;
       line-height: 1.6;
       margin-bottom: 20px;
+      text-align: justify;
     }
     .design-content .btn-outline-light {
       border-width: 2px;
       padding: 8px 20px;
     }
-
-     /* #numberCarousel.owl-nav .owl-prev {
-      left: 10px;
-    }
-     #numberCarousel.owl-nav .owl-next {
-      right: 10px;
-    } */
 
 
 
@@ -331,7 +592,7 @@
     width: 100%;
     height: 300px; /* adjust height if needed */
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('https://www.euphoriainteriors.com/wp-content/uploads/2024/10/Rental-Home-Design-UAE-.webp') center/cover no-repeat;
+                url('../image/Rental-Home-Design-UAE-.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
     overflow: hidden;}
@@ -345,7 +606,7 @@
   height: 60vh;
   object-fit: cover;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('https://eleganteinterior.com/wp-content/uploads/2024/10/3d-room-interior-with-classic-design-furniture-1-scaled.jpg') 
+              url('../image/room.jpg') 
               center/cover no-repeat;
 }
 .contact-top-banner h1 {
@@ -391,13 +652,13 @@
 
 /* Background images */
 .bg-address {
-  background: url('https://blogs.airbrickinfra.com/wp-content/uploads/2023/06/26fd42150022979.62f25635880ef-1024x576.jpg') center/cover no-repeat;
+  background: url('../image/address.jpg') center/cover no-repeat;
 }
 .bg-phone {
-  background: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/4c466f151115043.6306324acce1d.jpg') center/cover no-repeat;
+  background: url('../image/offixces.webp') center/cover no-repeat;
 }
 .bg-email {
-  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStSB5N_uqCqYqASd5zGqQdfx3-1PhFh_LBSPpx63kLfd9TkWIrIRBMHU74UqI-Nq3rgsY&usqp=CAU') center/cover no-repeat;
+  background: url('../image/emila.jpeg') center/cover no-repeat;
 }
 
 /* Contact Form with Image */
@@ -416,7 +677,7 @@
     font-size: 19px;
   min-height:500px; /* Banner-like height */
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('https://tdsmartinterior.com/assets/frontend/images/background/page-title-bg.webp') center/cover no-repeat;
+              url('../image/page-title-bg.webp') center/cover no-repeat;
   display: flex;
   align-items: center; /* Vertically center content */
    padding-top: 60px;  /* Top space */
@@ -434,6 +695,11 @@
 .footer ul li {
   margin-bottom: 10px; /* Adjust gap between items */
 }
+.service-card-link {
+  display: block;
+  color: inherit; /* Keep text color same */
+  text-decoration: none; /* Remove underline */
+}
 
 .footer ul li:last-child {
   margin-bottom: 0; /* Remove extra space after last item */
@@ -441,7 +707,7 @@
 
 
 .footer a:hover {
-  color: #FEC902 !important;
+  color: #c0a062 !important;
 }
 
 .footer .border-top {
@@ -513,7 +779,7 @@
     position: relative;
     width: 100%;
     height: 300px; /* adjust height if needed */
-    background: url('https://tdsmartinterior.com/assets/frontend/images/bg/marquee-bg.png') center/cover no-repeat;
+    background: url('../image/marquee-bg.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -687,7 +953,7 @@
     .process-step {
       position: relative;
       text-align: center;
-      padding: 40px 20px;
+      padding:  19px;
       border-radius: 12px;
       color: #fff;
       overflow: hidden;
@@ -718,10 +984,10 @@
 
 
     /* Example background images for each step */
-    .step1::before { background-image: url('https://dam.lcieducation.com/LCI-Education/Programs_Learning-Experiences/Art_Design-and-Communication/GettyImages-1372401378.jpg?vh=ff2ae0&w=1400&q=80'); }
-    .step2::before { background-image: url('https://i.pinimg.com/736x/3a/14/f5/3a14f50609fa4ebd7607fc28e4308fad.jpg'); }
-    .step3::before { background-image: url('https://cdn.prod.website-files.com/63c93a6f06452b0cb9457eb5/65681fcd86634b2777d7a119_64efef4f0cd076eeeb142e5b_harty-whole-home-remodel-living.jpg'); }
-    .step4::before { background-image: url('https://media.designcafe.com/wp-content/uploads/2020/03/21012601/chandelier-luxury-modern-living-room-design.jpg');}
+    .step1::before { background-image: url('../image/step1.webp1'); }
+    .step2::before { background-image: url('../image/step2.jpg'); }
+    .step3::before { background-image: url('../image/step3.jpg'); }
+    .step4::before { background-image: url('../image/step4.jpg');}
 
     
     .process-step img {
@@ -792,29 +1058,29 @@
 /* Star Rating */
 .text-warning {
     font-size: 1.1rem;
+    color:#c0a062 !important;
 }
 
-/* Owl Carousel Nav Buttons */
+
+/* Position arrows at bottom center */
+.reviews-carousel .owl-nav {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
 .reviews-carousel .owl-nav button {
+    display: inline-flex;
+    margin: 0 5px;
     background: #fff !important;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-}
-
-.reviews-carousel .owl-nav button.owl-prev {
-    left: -45px;
-}
-
-.reviews-carousel .owl-nav button.owl-next {
-    right: -45px;
+    transform: translateY(0) !important; /* remove previous translateY */
+    position: static; /* remove absolute positioning */
 }
 
 .reviews-carousel .owl-nav button span {
@@ -828,15 +1094,6 @@
     display: none;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .reviews-carousel .owl-nav button.owl-prev {
-        left: -25px;
-    }
-    .reviews-carousel .owl-nav button.owl-next {
-        right: -25px;
-    }
-}
 
 .about-banner {
   position: relative;
@@ -919,24 +1176,21 @@
       position: relative;
     }
     /* Shape over the text (upper-right) */
-    .shape-text {
-      position: absolute;
-      top: -20px;
-      right: -20px;
-      width: 120px;
-      z-index: 1;
-    }
+.shape-text {
+    position: absolute;
+    top: -125px;
+    right: -40px;
+    width: 120px;
+    z-index: 1;
+}
     .about-section h6 {
-      color: #c59d5f;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #c0a062;
+    text-transform: uppercase;
+    margin-bottom: 10px;
     }
-    .about-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
+
     .about-section p {
       color: #555;
       font-size: 16px;
@@ -987,11 +1241,11 @@
 
     /* Background images */
     .vision-card {
-      background: url('https://cdn-ildeijl.nitrocdn.com/WWZZHBIAduQtKZDoYNvoIrbnMovSSWDN/assets/images/optimized/rev-4e1d24b/eleganteinterior.com/wp-content/uploads/2024/10/balcony-scaled.webp') no-repeat center center/cover;
+      background: url('../image/visiion.webp') no-repeat center center/cover;
     }
 
     .mission-card {
-      background: url('https://cdn-ildeijl.nitrocdn.com/WWZZHBIAduQtKZDoYNvoIrbnMovSSWDN/assets/images/optimized/rev-4e1d24b/eleganteinterior.com/wp-content/uploads/2024/10/pexels-pixabay-276724.jpg') no-repeat center center/cover;
+      background: url('../image/mision.webp') no-repeat center center/cover;
     }
 
     /* Dark overlay for readability */
@@ -1023,7 +1277,7 @@
 
     .vm-icon {
       font-size: 40px;
-      color: #ffd24c;
+      color: #c0a062;
       margin-bottom: 10px;
     }
 
@@ -1091,10 +1345,14 @@
     padding: 60px 0;
     text-align: center;
   }
+  .main h3{
+     color: #c0a062; /* gold */
+     font-size: 1.5rem;
+  }
   .stats-section h2 {
     font-size: 48px;
     font-weight: 700;
-    color: #d4a017; /* gold */
+    color: #c0a062; /* gold */
   }
   .stats-section p {
     margin: 0;
@@ -1105,7 +1363,7 @@
   .stat-middle h2 {
     font-size: 140px;
     font-weight: 900;
-    background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center;
+    background: url('../image/sat.jpeg') no-repeat center;
     background-size: cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1171,7 +1429,76 @@ object-fit: cover;
       padding: 15px;
     }
     .service-card h5 {
-      font-size: 1rem;
+      font-size: 1.5rem;
       font-weight: 600;
       margin: 0;
+       color: #c0a062; /* gold */
     }
+
+  /* Text column styling */
+  .service-text {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+  }
+.service-subtitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+  /* Image column for parallax */
+  .parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+  }
+  .parallax-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* a bit taller for smooth movement */
+    object-fit: cover;
+    transform: translateY(0px);
+    will-change: transform;
+  }.parallax-container::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0);
+  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+.parallax-container:hover::after {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 1);
+}
+
+  @media (max-width: 768px) {
+    .service-text {
+      padding: 20px;
+    }
+    .parallax-container {
+      height: 250px;
+    }
+  }
+
+  .portfolio-section img {
+  width: 100%;
+  height: 300px;           /* Fixed height */
+  object-fit: cover;       /* Ensures image covers container without distortion */
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Hover Zoom Effect */
+.portfolio-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
